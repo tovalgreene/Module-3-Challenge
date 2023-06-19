@@ -7,13 +7,12 @@ while (generateLength < 8 || generateLength > 128) {
    alert("Invalid length.")
    window.prompt(passwordLength);
  }
-  
 
 //Pop-up confirms
 var confirmLowercase = confirm("I confirm the inclusion of lowercase letters in this password.");
 var confirmUppercase = confirm("I confirm the inclusion of uppercase letters in this password.");
 var confirmNumeric = confirm("I confirm the inclusion of numeric values in this password.");
-var confirmNumeric = confirm("I confirm the inclusion of special characters in this password."); 
+var confirmSpecial = confirm("I confirm the inclusion of special characters in this password."); 
 
 //Generates random lowercase
 function generateLowercase() {
@@ -38,10 +37,18 @@ function generateNumeric() {
 
 //Generates random special character
 function generateSpecial() {
-  if (confirmNumeric === true) {
+  if (confirmSpecial === true) {
   var special = "!@#$%^&*()_+~`|}{[]\:;?><,./-=";
   return special[Math.floor(Math.random() * special.length)];
 } }
+
+while (!confirmLowercase && !confirmUppercase && !confirmNumeric && !confirmSpecial) {
+  alert("Invalid: at least one character type should be selected.");
+  confirmLowercase = confirm("I confirm the inclusion of lowercase letters in this password.");
+  confirmUppercase = confirm("I confirm the inclusion of uppercase letters in this password.");
+  confirmNumeric = confirm("I confirm the inclusion of numeric values in this password.");
+  confirmSpecial = confirm("I confirm the inclusion of special characters in this password."); 
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
