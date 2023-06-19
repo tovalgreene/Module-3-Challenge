@@ -1,10 +1,12 @@
 //Prompt for number of characters 
 var passwordLength = "Please choose a length of at least 8 characters and no more than 128 characters."
-let generateLength = window.prompt(passwordLength);
+let generateLength = +window.prompt(passwordLength);
 
-if (generateLength.length < 8 || generateLength.length > 128) {
+//At least 8 characters and no more than 128 characters acceptance criteria
+while (generateLength < 8 || generateLength > 128) { 
    alert("Invalid length.")
-}
+   window.prompt(passwordLength);
+ }
   
 
 //Pop-up confirms
@@ -55,5 +57,4 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword); {
-  var length = +lengthEl.value;
 }
