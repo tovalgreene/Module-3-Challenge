@@ -14,31 +14,36 @@ var confirmUppercase = confirm("I confirm the inclusion of uppercase letters in 
 var confirmNumeric = confirm("I confirm the inclusion of numeric values in this password.");
 var confirmSpecial = confirm("I confirm the inclusion of special characters in this password."); 
 
+var lowercaseString = "abcdefghijklmnopqrstuvwxyz";
+var lowercase = lowercaseString.split("");
+var uppercaseString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var uppercase = uppercaseString.split("");
+var numericString = "0123456789";  
+var numeric = numericString.split("");
+var specialString = "!@#$%^&*()_+~`|}{[]\:;?><,./-=";
+var special = specialString.split("");
+
 //Generates random lowercase
 function generateLowercase() {
   if (confirmLowercase === true) {
-  var lowercase = "abcdefghijklmnopqrstuvwxyz";
   return lowercase[Math.floor(Math.random() * lowercase.length)];
   } }
 
 //Generates random uppercase
 function generateUppercase() {
   if (confirmUppercase === true) {
-  var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   return uppercase[Math.floor(Math.random() * uppercase.length)];
   } }
 
 //Generates random number between 0-9
 function generateNumeric() {
   if (confirmNumeric === true) {
-  var numeric = "0123456789";  
   return numeric[Math.floor(Math.random() * numeric.length)];
 } }
 
 //Generates random special character
 function generateSpecial() {
   if (confirmSpecial === true) {
-  var special = "!@#$%^&*()_+~`|}{[]\:;?><,./-=";
   return special[Math.floor(Math.random() * special.length)];
 } }
 
@@ -50,6 +55,33 @@ while (!confirmLowercase && !confirmUppercase && !confirmNumeric && !confirmSpec
   confirmSpecial = confirm("I confirm the inclusion of special characters in this password."); 
 }
 
+function generatePassword() {
+  let password = [];
+  var includedCharacters = [];
+  if (confirmLowercase === true) {
+    includedCharacters = includedCharacters.concat(lowercase);
+    password.push(generateLowercase()); 
+    generateLength = generateLength - 1 }
+  if (confirmUppercase === true) {
+    includedCharacters = includedCharacters.concat(uppercase);
+    password.push(generateUppercase()); 
+    generateLength = generateLength - 1 }
+  if (confirmNumeric === true) {
+    includedCharacters = includedCharacters.concat(numeric);
+    password.push(generateNumeric()); 
+    generateLength = generateLength - 1 }
+  if (confirmSpecial === true) {
+    includedCharacters = includedCharacters.concat(special);
+    password.push(generateSpecial()); 
+    generateLength = generateLength - 1}
+    console.log(includedCharacters);
+  for (let i = 0; i < generateLength; i++) {
+    password.push(includedCharacters[Math.floor(Math.random() * includedCharacters.length)]);
+  } 
+  return password;
+}
+
+console.log(generatePassword())
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
