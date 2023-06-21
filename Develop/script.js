@@ -82,15 +82,13 @@ function generatePassword() {
     password.push(generateSpecial());
     generateLength = generateLength - 1
   }
-  console.log(includedCharacters);
+
   for (let i = 0; i < generateLength; i++) {
     password.push(includedCharacters[Math.floor(Math.random() * includedCharacters.length)]);
   } 
   //Join is opposite of split
   return password.join("");
 }
-
-console.log(generatePassword())
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
