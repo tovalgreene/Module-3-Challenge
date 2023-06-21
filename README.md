@@ -5,6 +5,7 @@
 The purpose of this project is to provide a user with a fully customizable, randomized password. The user is prompted with statements, such as "I confirm the inclusion of lowercase letters in this password." Their acceptance or denial of these prompts inform what type of characters their password includes. 
 
 ## Installation
+https://tovalgreene.github.io/Module-3-Challenge/
 
 ## License
 
