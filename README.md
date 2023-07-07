@@ -1,8 +1,8 @@
-## Module-3-Challenge
+## Password Generator
 
-## This is a password generator that allows the user to choose whether they want the inclusion of uppercase, lowercase, numeric, and special values. It also allows the user to pick the number of characters in the password (8-128). 
+## Module 3 Challenge for Columbia Engineering Bootcamp
 
-The purpose of this project is to provide a user with a fully customizable, randomized password. The user is prompted with statements, such as "I confirm the inclusion of lowercase letters in this password." Their acceptance or denial of these prompts inform what type of characters their password includes. 
+This is a password generator that allows the user to choose whether they want the inclusion of uppercase, lowercase, numeric, and special values. It also allows the user to pick the number of characters in the password (8-128). The purpose of this project is to provide a user with a fully customizable, randomized password. The user is prompted with statements, such as "I confirm the inclusion of lowercase letters in this password." Their acceptance or denial of these prompts inform what type of characters their password includes. 
 
 ## Installation
 https://tovalgreene.github.io/Module-3-Challenge/
